@@ -1,3 +1,5 @@
+
+
 ALPHABET_LOWERCASE = "abcdefghijklmnopqrstuvwxyz"
 ALPHABET_UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -6,15 +8,17 @@ def alphabet_position(letter):
     return alphabet.index(letter)
 
 def rotate_char(char, rotation):
+    #call rot function from main to change the rotation
+    
     if not char.isalpha():
         return char
 
     alphabet = ALPHABET_LOWERCASE if char.islower() else ALPHABET_UPPERCASE
-    new_pos - (alphabet_position(char) + rotation) % 26
-    return alplhabet[new_pos]
+    new_pos = (alphabet_position(char) + rotation) % 26 #previously 26
+    return alphabet[new_pos]
 
 def encrypt(text, rotation):
     answer = ""
     for char in text:
-        answer += rotate_char(char, rotation)
+        answer += rotate_char(char, rotation) #rot was rotation
     return answer
